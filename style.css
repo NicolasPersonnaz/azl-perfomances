@@ -135,3 +135,8 @@ nav ul li .submenu li a:hover {
         height: 40px;
     }
 }
+.icons .logo {
+    height: 20px; /* Par exemple, ajuste à 20px */
+    width: auto; /* Garde les proportions de l'image */
+    margin-right: 5px; /* Ajuste l'espacement avec le texte */
+}
