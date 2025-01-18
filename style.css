@@ -1,4 +1,4 @@
-/* Réinitialisation générale */
+/* Styles généraux */
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +11,6 @@ body {
     color: #fff;
 }
 
-/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -29,7 +28,6 @@ header {
     height: 40px;
 }
 
-/* Menu principal */
 nav ul {
     list-style: none;
     display: flex;
@@ -49,24 +47,11 @@ nav ul li a {
     transition: color 0.3s ease;
 }
 
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: #fff;
-    left: 50%;
-    bottom: -5px;
-    transition: width 0.3s ease, left 0.3s ease;
+nav ul li a:hover {
+    color: #ccc;
 }
 
-nav ul li a:hover::after {
-    width: 100%;
-    left: 0;
-}
-
-/* Sous-menu */
-nav ul li ul {
+nav ul li .submenu {
     display: none;
     position: absolute;
     top: 100%;
@@ -78,16 +63,16 @@ nav ul li ul {
     z-index: 1000;
 }
 
-nav ul li:hover ul {
+nav ul li:hover .submenu {
     display: block;
 }
 
-nav ul li ul li {
+nav ul li .submenu li {
     margin: 0;
     text-align: left;
 }
 
-nav ul li ul li a {
+nav ul li .submenu li a {
     padding: 10px 20px;
     display: block;
     font-size: 13px;
@@ -96,12 +81,11 @@ nav ul li ul li a {
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-nav ul li ul li a:hover {
+nav ul li .submenu li a:hover {
     background-color: #222;
     color: #fff;
 }
 
-/* Icônes */
 .icons a {
     color: #fff;
     font-size: 18px;
@@ -113,7 +97,6 @@ nav ul li ul li a:hover {
     color: #ccc;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     nav ul {
         display: none;
@@ -137,13 +120,13 @@ nav ul li ul li a:hover {
         text-align: center;
     }
 
-    nav ul li ul {
+    nav ul li .submenu {
         position: relative;
         background-color: transparent;
         box-shadow: none;
     }
 
-    nav ul li ul li a {
+    nav ul li .submenu li a {
         padding-left: 30px;
     }
 
