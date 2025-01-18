@@ -135,8 +135,43 @@ nav ul li .submenu li a:hover {
         height: 40px;
     }
 }
-.icons .logo {
-    height: 20px; /* Par exemple, ajuste à 20px */
-    width: auto; /* Garde les proportions de l'image */
-    margin-right: 5px; /* Ajuste l'espacement avec le texte */
+/* Style général pour le conteneur des icônes */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacement entre les éléments */
 }
+
+/* Style pour le bouton de connexion (lien avec image et texte) */
+.login-button {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Retire le soulignement */
+    color: white; /* Couleur du texte */
+    font-size: 14px; /* Taille du texte */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-button:hover {
+    color: #ccc; /* Couleur au survol */
+}
+
+/* Style pour l'image dans le bouton de connexion */
+.login-button .logo {
+    height: 20px; /* Ajuste la hauteur de l'image */
+    width: auto; /* Maintient les proportions de l'image */
+    margin-right: 5px; /* Espacement entre l'image et le texte */
+}
+
+/* Style pour l'icône de recherche */
+.fas.fa-search {
+    font-size: 18px; /* Taille de l'icône */
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.fas.fa-search:hover {
+    color: #ccc; /* Couleur au survol */
+}
+
