@@ -1,3 +1,4 @@
+/* Réinitialisation générale */
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +11,7 @@ body {
     color: #fff;
 }
 
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -27,10 +29,15 @@ header {
     height: 40px;
 }
 
+/* Menu principal */
 nav ul {
     list-style: none;
     display: flex;
     gap: 30px;
+}
+
+nav ul li {
+    position: relative;
 }
 
 nav ul li a {
@@ -58,6 +65,43 @@ nav ul li a:hover::after {
     left: 0;
 }
 
+/* Sous-menu */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #111;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    margin: 0;
+    text-align: left;
+}
+
+nav ul li ul li a {
+    padding: 10px 20px;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: #ccc;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav ul li ul li a:hover {
+    background-color: #222;
+    color: #fff;
+}
+
+/* Icônes */
 .icons a {
     color: #fff;
     font-size: 18px;
@@ -69,6 +113,7 @@ nav ul li a:hover::after {
     color: #ccc;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     nav ul {
         display: none;
@@ -79,14 +124,29 @@ nav ul li a:hover::after {
         background-color: #000;
         width: 200px;
         border: 1px solid #333;
+        padding: 10px 0;
+        border-radius: 5px;
     }
+
     nav ul.show {
         display: flex;
     }
+
     nav ul li {
         margin: 10px 0;
         text-align: center;
     }
+
+    nav ul li ul {
+        position: relative;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    nav ul li ul li a {
+        padding-left: 30px;
+    }
+
     .icons a {
         font-size: 24px;
     }
