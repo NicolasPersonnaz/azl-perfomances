@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Client</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Aquatico', sans-serif;
+        }
+        .background-page { background-color: #030303; } /* Couleur de fond principale */
+        .background-header { background-color: #000000; } /* Couleur de fond du header */
+        .background-sidebar { background-color: #252525; } /* Couleur de fond du menu */
+    </style>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("sidebar");
+            menu.classList.toggle("translate-x-full");
+        }
+    </script>
+</head>
+<body class="background-page text-white h-screen flex flex-col">
+    <!-- Header -->
+    <header class="w-full flex items-center justify-between p-4 background-header shadow-md">
+        <a href="index.html">
+            <img src="logo.jpg" alt="ALZ Performances" class="h-10">
+        </a> <!-- Logo en haut à gauche -->
+        <h1 class="text-2xl font-bold text-white">ALZ PERFORMANCES</h1> <!-- Titre centré -->
+        <button class="text-white text-2xl" onclick="toggleMenu()">☰</button> <!-- Bouton pour ouvrir le menu à droite -->
+    </header>
+    
+    <!-- Contenu principal -->
+    <div class="flex-1 p-6 flex flex-col items-center justify-center">
+        <h2 class="text-3xl font-bold">Bienvenue dans votre historique de commandes</h2>
+        <p class="mt-2 text-gray-400">Gérez vos commandes, factures et paramètres ici.</p>
+    </div>
+    
+    <!-- Menu latéral à droite -->
+    <div id="sidebar" class="fixed right-0 top-0 h-full w-64 background-sidebar shadow-lg p-4 transform translate-x-full transition-transform duration-300">
+        <button class="absolute top-4 left-4 text-white" onclick="toggleMenu()">✖</button>
+        <h2 class="text-xl font-bold mb-6 text-center">Espace Client</h2>
+        <ul class="space-y-4">
+            <li class="hover:text-red-500 cursor-pointer" onclick="window.location.href='tableau-de-bord.php'">Tableau de bord</li>
+            <li class="hover:text-red-500 cursor-pointer" onclick="window.location.href='historique.html'">Historique</li>
+            <li class="hover:text-red-500 cursor-pointer" onclick="window.location.href='planning.html'">Prendre Rendez-vous</li>
+            <li class="hover:text-red-500 cursor-pointer" onclick="window.location.href='my-profile.html'">Mon compte</li>
+        </ul>
+    </div>
+</body>
+</html>
